@@ -1,6 +1,8 @@
 const Constants= {
 	ADD_DECK:"ADD_DECK",
-	ADD_CARD:"ADD_CARD",
+	ADD_QUESTION:"ADD_QUESTION",
 	QUESTIONS:"QUESTIONS",
+	GET_DECK:"GET_DECK",
+	CURRENT_DECK:"CURRENT_DECK"
 };
 export default Constants;
