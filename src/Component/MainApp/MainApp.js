@@ -1,11 +1,19 @@
 import React from "react";
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { purple, white } from '../../utils/colors';
-import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import DecksTab from "../DecksTabs/DecksTab";  // Renders the Decks and list of cards .
 import NewDeckTab from "../NewDeckTab/NewDeckTab"; // Renders the New Deck tab.
 
+
+const MyStatusBar =  ({ backgroundColor, ...props })=> {
+	return (
+		<View style={{ backgroundColor, height: 70 }}>
+			<StatusBar translucent backgroundColor={backgroundColor} {...props}/>
+		</View>
+	)
+};
 const TabNavigator = createBottomTabNavigator({
 	Deck: {
 		screen: DecksTab,
@@ -37,7 +45,10 @@ class MainApp extends React.Component{
 		console.log("prrr");
 		if(this.props.state.deck){
 			return(
-				<Tabs {...this.props} />
+				<View style={{flex:1}}>
+					<MyStatusBar backgroundColor={"blue"} barStyle='light-content'/>
+					<Tabs {...this.props} />
+				</View>
 			);
 		} else{
 			return (
