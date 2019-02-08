@@ -4,7 +4,8 @@ class DecksTab extends React.Component{
 	render(){
 		return(
 			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-				<Text>Add New DECKS</Text>
+				<Text>List of DECKS</Text>
+				<Text>DEck of Cards</Text>
 			</View>
 		);
 	}

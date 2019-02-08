@@ -1,6 +1,6 @@
 import React from "react";
 import {StatusBar, StyleSheet, Text, View} from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { purple, white } from '../../utils/colors';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import DecksTab from "../DecksTabs/DecksTab";  // Renders the Decks and list of cards .
@@ -14,25 +14,70 @@ const MyStatusBar =  ({ backgroundColor, ...props })=> {
 		</View>
 	)
 };
-const TabNavigator = createBottomTabNavigator({
-	Deck: {
+const Tabs = TabNavigator({
+	DeckList: {
 		screen: DecksTab,
 		navigationOptions: {
-			tabBarLabel: 'DECKKKS',
-			tabBarIcon: ({ tintColor }) => <Ionicons name='ios-bookmarks' size={30} color={tintColor} />
-		},
+			tabBarLabel: 'Decks',
+			tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name='cards' size={30} color={tintColor}/>
+		}
 	},
-	NewDeck: {
+	AddDeck: {
 		screen: NewDeckTab,
 		navigationOptions: {
-			tabBarLabel: 'NewDecks',
-			tabBarIcon: ({ tintColor }) => <Ionicons name='ios-bookmarks' size={30} color={tintColor} />
-		},
-		
-	},
+			tabBarLabel: 'Add Deck',
+			tabBarIcon: ({ tintColor }) => <FontAwesome name='plus-square' size={30} color={tintColor}/>
+		}
+	}
+}, {
+	tabBarOptions: {
+		activeTintColor: "blue",
+		style: {
+			height: 56,
+			backgroundColor: white,
+		}
+	}
 });
 
-const Tabs = createAppContainer(TabNavigator);
+const MainNavigator = StackNavigator({
+	Home: {
+		screen: Tabs,
+		navigationOptions: {
+			header: null
+		}
+	},
+	DeckView: {
+		screen: DecksTab,
+		navigationOptions: {
+			title: 'Deck Info',
+			headerTintColor: purple,
+			headerStyle: {
+				backgroundColor: "blue",
+			}
+		}
+	},
+	AddCard: {
+		screen: NewDeckTab,
+		navigationOptions: {
+			title: 'Add Card',
+			headerTintColor: purple,
+			headerStyle: {
+				backgroundColor: "blue"
+			}
+		}
+	},/*
+	Quiz: {
+		screen: Quiz,
+		navigationOptions: {
+			title: 'Quiz',
+			headerTintColor: white,
+			headerStyle: {
+				backgroundColor: navy
+			}
+		}
+	}*/
+});
+
 
 class MainApp extends React.Component{
 	componentDidMount() {
@@ -47,7 +92,7 @@ class MainApp extends React.Component{
 			return(
 				<View style={{flex:1}}>
 					<MyStatusBar backgroundColor={"blue"} barStyle='light-content'/>
-					<Tabs {...this.props} />
+					<MainNavigator {...this.props} />
 				</View>
 			);
 		} else{
