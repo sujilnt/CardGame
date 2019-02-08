@@ -7,14 +7,14 @@ import DecksTab from "../DecksTabs/DecksTab";  // Renders the Decks and list of 
 import NewDeckTab from "../NewDeckTab/NewDeckTab"; // Renders the New Deck tab.
 
 const TabNavigator = createBottomTabNavigator({
-	Home: {
+	Deck: {
 		screen: DecksTab,
 		navigationOptions: {
 			tabBarLabel: 'DECKKKS',
 			tabBarIcon: ({ tintColor }) => <Ionicons name='ios-bookmarks' size={30} color={tintColor} />
 		},
 	},
-	Settings: {
+	NewDeck: {
 		screen: NewDeckTab,
 		navigationOptions: {
 			tabBarLabel: 'NewDecks',
