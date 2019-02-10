@@ -1,17 +1,15 @@
 import React from 'react';
-import MainAppContainer from "./src/Component/MainApp/MainAppContainer";
-import createStore from "./src/store/storeFactory";
-import {Provider} from "react-redux";
+import MainAppContainer from './src/Component/MainApp/MainAppContainer';
+import createStore from './src/store/storeFactory';
+import { Provider } from 'react-redux';
 const store = createStore();
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   render() {
     return (
-        <Provider store={store}>
-            <MainAppContainer/>
-        </Provider>
+      <Provider store={store}>
+        <MainAppContainer />
+      </Provider>
     );
   }
-  
 }
-
