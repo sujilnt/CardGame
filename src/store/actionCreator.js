@@ -8,7 +8,7 @@ import C from "./Constants";
 
 // getDeck -> A action creator tht returns the list of the decks of type Object
 export const getDeck = () => async dispatch =>{
-	await getDeckPromise().then( (data)=> {
+	await getDeckPromise().then((data)=> {
 		return dispatch({
 			type:C.GET_DECK,
 			payload:data
@@ -21,11 +21,11 @@ export const getDeck = () => async dispatch =>{
     addDeck -> A action creator that add another deck to exsisting deck list .
     params : DeckName -> name of the deck
 */
-export const addDeck = (deckname)=> async dispatch =>{
-	await addDeckPromise(deckname).then((data)=>{
+export const addDeck = (deck,deckname)=> async dispatch =>{
+	await addDeckPromise(deck,deckname).then((data)=>{
 		return dispatch({
 			type:C.GET_DECK,
-			payload:data
+			payload: data
 		});
 	});
 };
@@ -35,8 +35,8 @@ export const addDeck = (deckname)=> async dispatch =>{
 	the parameter are passed  questionsObj and id of deck  .
 
 */
-export const addQuestions = (questionObj,id) =>async dispatch =>{
- await addQuestionsPromise(questionObj,id).then((data)=>{
+export const addQuestions = (data,questionObj,id) => async dispatch =>{
+ await addQuestionsPromise(data,questionObj,id).then((data)=>{
  	return dispatch({
 	   type:C.GET_DECK,
 	   payload:data
@@ -47,8 +47,8 @@ export const addQuestions = (questionObj,id) =>async dispatch =>{
 *  getCurrentDeck:  A action creator that is used for retrieving current Deck when user clicks on the card .
 *  params -> Deck ID
 * */
-export const getCurrentDeck = (deckId) => async dispatch =>{
- await getCurrentDeckPromise(deckId).then((data)=>{
+export const getCurrentDeck = (deck,deckId) => async dispatch =>{
+ await getCurrentDeckPromise(deck,deckId).then((data)=>{
  	return dispatch({
 	    type:C.CURRENT_DECK,
 	    payload:data

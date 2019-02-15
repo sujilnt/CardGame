@@ -9,7 +9,6 @@ import {
 } from '../../store/actionCreator';
 
 const mapStateToProps = state => {
-  console.log('state mainContainer', state);
   return {
     state: {
       ...state,
@@ -19,14 +18,12 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = async dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     action: {
-      getDeckAction: await dispatch(getDeck()),
-      addDeckAction: deckObj => dispatch(addDeck(deckObj)),
+      getDeckAction: dispatch(getDeck()),
       addQuestionsAction: (questionObj, id) =>
         dispatch(addQuestions(questionObj, id)),
-      getCurrentDeckAction: id => dispatch(getCurrentDeck(id)),
       dispatch,
     },
   };

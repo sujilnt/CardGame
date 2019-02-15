@@ -4,9 +4,11 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { purple, white } from '../../utils/colors';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import DeckContainer from "../DecksTabs/DecksContainer";  // Renders the Decks and list of cards .
-import NewDeckTab from "../NewDeckTab/NewDeckTab"; // Renders the New Deck tab.
-import DeckView from "../DeckView/DeckView"; // Viewing of the deck 
-import AddCardQuestion from "../AddCardQuestions/AddCardQuestions"; // Add Card Questions
+import NewDeckTabContainer from "../NewDeckTab/NewDeckTabContain"; // Renders the New Deck tab.
+import DeckViewContainer from "../DeckView/DeckViewContainer"; // Viewing of the deck 
+import AddCardQuestionsContainer from "../AddCardQuestions/AddCardQuestionsContainer"; // Adding answer and Questions 
+import QuizContainer from "../Quiz/QuizContainer"; // Quiz 
+
 const MyStatusBar =  ({ backgroundColor, ...props })=> {
 	return (
 		<View style={{ backgroundColor, height: 20 }}>
@@ -22,8 +24,8 @@ const Tabs = TabNavigator({
 			tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name='cards' size={30} color={tintColor}/>
 		}
 	},
-	NewDeckTab: {
-		screen: NewDeckTab,
+	AddDeck: {
+		screen: NewDeckTabContainer,
 		navigationOptions: {
 			tabBarLabel: 'Add Deck',
 			tabBarIcon: ({ tintColor }) => <FontAwesome name='plus-square' size={30} color={tintColor}/>
@@ -48,17 +50,17 @@ const MainNavigator = StackNavigator({
 		}
 	},
 	DeckView: {
-		screen: DeckView,
+		screen: DeckViewContainer,
 		navigationOptions: {
-			title: 'Deck',
+			title: 'Deck Info',
 			headerTintColor: purple,
 			headerStyle: {
 				backgroundColor: "lightblue",
 			}
 		}
 	},
-	AddCardQuestion: {
-		screen: AddCardQuestion,
+	AddCardQuestions: {
+		screen: AddCardQuestionsContainer,
 		navigationOptions: {
 			title: 'Add DeckCard',
 			headerTintColor: purple,
@@ -66,37 +68,34 @@ const MainNavigator = StackNavigator({
 				backgroundColor: "lightblue"
 			}
 		}
-	},/*
+	},
 	Quiz: {
-		screen: Quiz,
+		screen: QuizContainer,
 		navigationOptions: {
 			title: 'Quiz',
-			headerTintColor: white,
+			headerTintColor: purple,
 			headerStyle: {
-				backgroundColor: navy
+				backgroundColor: "lightblue"
 			}
 		}
-	}*/
+	}
 });
 
 
-class MainApp extends React.Component{
+class MainApp extends React.PureComponent{
 	render(){
     const keys = Object.keys(this.props.state.deck);
-    console.log("keys",keys);
 		if(keys.length > 0){
-         console.log("kkkkk", keys.length);
-         
 			return(
-				<View style={{flex:1}}>
+				<View style={styles.flex1}>
 					<MainNavigator />
 				</View>
 			);
 		} else{
 			return (
-			 <View>	
+			 <View style={[styles.flex1,styles.container]}>	
             <Text> 
-               loader .....
+               App loading.....
             </Text>
        </View>
 			)
@@ -104,6 +103,14 @@ class MainApp extends React.Component{
 	}
 }
 
-
+const styles = StyleSheet.create({
+  flex1:{
+    flex:1
+  },
+  container:{
+    justifyContent:"center",
+    alignItems:"center"
+  }
+})
 
 export default MainApp;

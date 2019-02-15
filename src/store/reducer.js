@@ -13,6 +13,7 @@ export const currentDeck = (state={},action) => (action.type === C.CURRENT_DECK)
 	action.payload:
 	state;
 
+
 export default combineReducers({
 	deck,
 	currentDeck

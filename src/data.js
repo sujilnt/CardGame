@@ -20,14 +20,19 @@ const data={
 				answer: 'The combination of a function and the lexical environment within which that function was declared.'
 			}
 		]
+	},
+  sujil: {
+		title: 'sujil',
+		questions: []
 	}
 };
 
-const _getCurrentDeck = (id)=>{
-	return {...data[id]};
+const _getCurrentDeck = (deck,id)=>{
+	return {...deck[id]};
 };
 
-const _addQuestions = (questionObj,id)=>{
+const _addQuestions = (data,questionObj,id)=>{
+		if(data[id].questions.length >= 1 ){
 		return {
 			...data,
 			[id]: {
@@ -35,6 +40,15 @@ const _addQuestions = (questionObj,id)=>{
 				questions:[...data[id].questions, questionObj]
 			}
 		}
+	} else {
+		return {
+			...data,
+			[id]: {
+				...data[id],
+				questions:[ questionObj]
+			}
+		}
+	}
 };
 
 export const getDeckPromise =function(){
@@ -43,27 +57,27 @@ export const getDeckPromise =function(){
 	});
 }; // when resolved returns a object that contains set of decks .
 
-export const addDeckPromise = (newdeck)=>{
+export const addDeckPromise = (deck,newdeck)=>{
 	return  new Promise((res,rej)=>{
 		setTimeout(()=>res({
-			...data,
+			...deck,
 			[newdeck.title]: newdeck
 		}),1000);
 	}); // when resolved returns a objects that adds another Deck to the exsisting one
 };
 
-export const getCurrentDeckPromise = (deckID)=>{
+export const getCurrentDeckPromise = (deck,deckID)=>{
 	return new Promise((res,rej)=>{
 		setTimeout(()=>res(
-			_getCurrentDeck(deckID) // when resolved  , returns a object current Questions
+			_getCurrentDeck(deck,deckID) // when resolved  , returns a object current Questions
 		));
 	})
 };
 
-export const addQuestionsPromise = (questionObj,id)=>{
+export const addQuestionsPromise = (data,questionObj,id)=>{
 	return new Promise((res,rej)=>{
 		setTimeout(()=>res(
-			_addQuestions(questionObj,id)  // when resolved  , returns a object that add a question to particular deck
+			_addQuestions(data,questionObj,id)  // when resolved  , returns a object that add a question to particular deck
 		));
 	})
 };

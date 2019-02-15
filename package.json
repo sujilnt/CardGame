@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A App to ask to ask Questions..",
   "author": "Sujil anto thomas",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^9.0.0",
+    "@react-navigation/core": "^3.0.0",
     "@react-navigation/native": "^3.1.4",
     "expect": "^24.1.0",
     "expo": "^32.0.0",
-    "react": "16.5.0",
+    "react": "^16.8.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-material-cards": "^1.0.9",
     "react-native-vector-icons": "^6.2.0",
@@ -26,7 +27,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "schedule": "^0.4.0"
   },
   "private": true
 }
