@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, 
+import { StyleSheet,
 	     Text,
 	     View,
-	     TouchableOpacity,
 	     TextInput,
 	     KeyboardAvoidingView,
        Button } from 'react-native';
@@ -21,18 +20,18 @@ class AddCardQuestions extends React.PureComponent{
         question: question.trim(),
         answer: answers.trim(),
         
-      }
+      };
       const updatedDeck = {
         ...this.props.currentDeck,
         questions:[
           ...this.props.currentDeck.questions,
           questionObj
         ]
-      }
+      };
      console.log("check",this.props,updatedDeck);
       this.relocate(this.props,updatedDeck);
       await dispatch(addQuestionsAction(this.props.deck,questionObj,this.props.currentDeck.title));
-    } 
+    }
   };
   
   relocate = async (props,check) =>{
@@ -45,7 +44,7 @@ class AddCardQuestions extends React.PureComponent{
   handleChangeAnswers= (answers) => this.setState({ answers });
   render(){
       return (
-       <KeyboardAvoidingView behavior='padding'  style={styles.container}>		
+       <KeyboardAvoidingView behavior='padding'  style={styles.container}>
 			<View style={styles.container}>
 				<Text >What is the question?</Text>
 			      <Text style={styles.title}>What is the question?</Text>
@@ -61,9 +60,9 @@ class AddCardQuestions extends React.PureComponent{
 			        onChangeText={this.handleChangeAnswers}
 			        value={this.state.answer}
 			      />
-   				 <Button title="Submit" onPress={this.SubmitAction}/> 
+   				 <Button title="Submit" onPress={this.SubmitAction}/>
 			</View>
-		</KeyboardAvoidingView>	
+		</KeyboardAvoidingView>
       );
   }
 }
@@ -85,5 +84,5 @@ const styles = StyleSheet.create({
 		  borderColor: '#757575',
 		  margin: 20
 	},
-})
+});
 export default AddCardQuestions;

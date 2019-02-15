@@ -17,8 +17,8 @@ class DeckView extends React.PureComponent{
   };
 
   onClick = async () =>{
-      const checker = this.props.navigation.state.params.entryId ; 
-      const {dispatch,action,state}=this.props;
+      const checker = this.props.navigation.state.params.entryId ;
+      const {action,state}=this.props;
      this.props.navigation.navigate('AddCardQuestions',
      {
          entryId: {checker}
@@ -32,15 +32,15 @@ componentDidMount() {
   }
 
  _setHomePath = () => {
-    const check = this.props.navigation.state.params.entryId ; 
+    const check = this.props.navigation.state.params.entryId ;
     this.props.navigation.navigate('Home',{
         entryId: {check}
     });
   };
   
   _startQuiz =async()=>{
-    const check = this.props.navigation.state.params.entryId ; 
-     const {dispatch,action,state}=this.props;
+    const check = this.props.navigation.state.params.entryId ;
+     const {action,state}=this.props;
     this.props.navigation.navigate('Quiz',{
         entryId: {check}
     });
@@ -48,7 +48,7 @@ componentDidMount() {
   }
    render(){
 
-   const check = this.props.navigation.state.params.entryId ; 
+   const check = this.props.navigation.state.params.entryId ;
    console.log("deckview",this.props);
     if(check){
         const cardText = check.questions.length > 1 ?  `${check.questions.length} Cards` : `${check.questions.length} Card`;
@@ -59,14 +59,14 @@ componentDidMount() {
           <Text style={styles.cardText}>{cardText}</Text>
           </View>
           <View>
-          <Button 
+          <Button
               onPress={this.onClick}
             style={styles.border}
             title="Add Card"
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
         />
-        <Button 
+        <Button
             onPress={this._startQuiz}
             style={styles.border}
             title="START QUIZ"
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
    textAlign: "center"
   },
   border:{
-    borderWidth:1 
+    borderWidth:1
   }
 
 });

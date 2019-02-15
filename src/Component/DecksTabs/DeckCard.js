@@ -2,10 +2,8 @@ import React,{PureComponent} from 'react';
 import {
   Card,
   CardTitle,
-  CardContent,
   CardAction,
   CardButton,
-  CardImage,
 } from 'react-native-material-cards';
 import { View, Text,TouchableOpacity,Button } from 'react-native';
 import DeckView from '../DeckView/DeckView';
@@ -19,12 +17,12 @@ class DeckCard extends PureComponent {
   });
 };
  render(){
-    const { title, questions, parentProps } = this.props;
+    const { title, questions } = this.props;
     if (title) {
       const questionlength = questions.length;
       const cardText = questionlength > 1 ? `${questionlength} cards` : `${questionlength} card`;
-      return ( 
-      <View style={{flex:1,minHeight: 150}}>   
+      return (
+      <View style={{flex:1,minHeight: 150}}>
         <Card>
         <CardTitle
           title={title}
@@ -35,16 +33,14 @@ class DeckCard extends PureComponent {
             justifyContent: 'center',
           }}
         />
-        <CardAction 
+        <CardAction
         separator={true}
-         inColumn={true}>
-         <TouchableOpacity >
-          <Button
-            onPress={this.checkButtonFunction}
-            title="Check Deck"
-            color="blue"
-          />
-          </TouchableOpacity>
+         inColumn={true} >
+            <CardButton
+                onPress={this.checkButtonFunction}
+                title="Check Deck"
+                color="blue"
+            />
         </CardAction>
         </Card>
       </View>

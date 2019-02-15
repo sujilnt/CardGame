@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native'
-export const STORE_KEY = 'Udacity:CardApp' ; 
+export const STORE_KEY = 'Udacity:CardApp' ;
 const NOTIFICATION_KEY = 'CardApp:notifications';
 import { Notifications, Permissions } from 'expo'
 
@@ -7,11 +7,11 @@ export function submitEntry (user) {
   return AsyncStorage.mergeItem(STORE_KEY, JSON.stringify(user))
 }
 
-export function removeEntry (key) {
+export function removeEntry () {
   return AsyncStorage.getItem(STORE_KEY)
     .then((results) => {
       console.log(results);
-    })
+    });
 }
 
 function createNotification () {

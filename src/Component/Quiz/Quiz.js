@@ -25,14 +25,14 @@ class Quiz extends React.PureComponent{
             correctanswered: this.state.questionNumber+1
           };
       });
-    }
+    };
     wrongButtononChange = ()=>{
       this.setState(()=>{
         return {
             questionNumber: this.state.questionNumber+1,
           };
       });
-    }
+    };
     resetReults = ()=>{
       
         this.setState(()=>{
@@ -41,7 +41,7 @@ class Quiz extends React.PureComponent{
             correctanswered: 0
           }
         });
-        clearLocalNotification().then(setLocalNotification)
+        clearLocalNotification().then(setLocalNotification);
           submitEntry({
             "answeredquestions": true
             });
@@ -52,7 +52,7 @@ class Quiz extends React.PureComponent{
       {
         entryId: {...currentprops}
       });
-       clearLocalNotification().then(setLocalNotification)
+       clearLocalNotification().then(setLocalNotification);
         submitEntry({
           "answeredquestions": true
         });
@@ -64,42 +64,42 @@ class Quiz extends React.PureComponent{
            showAnswer: !this.state.showAnswer
         }
       })
-    }
+    };
   render(){
     const {deck,currentDeck}=this.props.state;
-     const check = this.props.navigation.state.params.entryId ; 
-     const hasAnyQustions = check.check.questions.length >=1 ? true : false ; 
+     const check = this.props.navigation.state.params.entryId ;
+     const hasAnyQustions = check.check.questions.length >=1 ;
      const {questionNumber,correctanswered}=this.state;
      if(hasAnyQustions && currentDeck.title !== undefined){
         const currentQuestionsArray = deck[currentDeck.title].questions ;
-        const totalQuestions = currentQuestionsArray.length; 
+        const totalQuestions = currentQuestionsArray.length;
           if(currentQuestionsArray.length  > questionNumber ){
              const numberofQuestionAnswered = questionNumber+1;
-             const currentQuestion = currentQuestionsArray[questionNumber]; 
+             const currentQuestion = currentQuestionsArray[questionNumber];
             return(
             <View style={[styles.container,styles.contentTop]}>
                <Text style={styles.numberOfQuestions}>{numberofQuestionAnswered} / {totalQuestions} </Text>
                <Text style={styles.currentQuestionStyles}> {currentQuestion.question} </Text>
               {
-                 this.state.showAnswer ? 
+                 this.state.showAnswer ?
                    <Text style={styles.answer}>
                     {currentQuestion.answer}
                    </Text>
-					      : <Text></Text>}
+					      : <Text> </Text>}
 
                {
-                 !this.state.showAnswer ? 
+                 !this.state.showAnswer ?
                  <Info text={"Show Answer"} style={{ color: "blue",fontSize: 16,margin: 20 }} onPress={this.showAnswer}/>
 				        	    : <Info text={"Hide Answer"} style={{ color: "blue",fontSize: 16,margin: 20 }}  onPress={this.showAnswer}/>
                       }
-              <Button 
+              <Button
                 onPress={this.onChange}
                 style={styles.border}
                 title="Correct"
                 color="green"
                 accessibilityLabel="Correct Answer BUTTON"
               />
-              <Button 
+              <Button
                 onPress={this.wrongButtononChange}
                 style={styles.border}
                 title="Wrong"
@@ -114,14 +114,14 @@ class Quiz extends React.PureComponent{
                   <View style={styles.container}>
                     <Text style={[styles.text1,styles.fontWeightAndColor]}>{"Your Score Perencetage is"}</Text>
                     <Text style={[styles.text2,styles.fontWeightAndColor]}>{perecentage}%</Text>
-                    <Button 
+                    <Button
                       onPress={this.resetReults}
                       style={styles.border}
                       title="Redo Quiz"
                       color="purple"
                       accessibilityLabel="resetting results "
                     />
-                    <Button 
+                    <Button
                       onPress={this.backtoDeck}
                       style={styles.border}
                       title="Go back to Deck"
@@ -138,20 +138,20 @@ class Quiz extends React.PureComponent{
                 No Questions in this Deck Add Questions to this deck inorder to answer.
              </Text>
           </View>
-    );      
+    );
      }
   }
 }
 const styles = StyleSheet.create({
   container:{
-    flex:1, 
+    flex:1,
     justifyContent: "center",
     alignItems:"center",
   },
   padding:{
     paddingLeft: 20,
     paddingRight:20
-  }, 
+  },
   fontSizecss:{
     fontSize: 20,
     fontWeight: "100"
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   numberOfQuestions:{
     alignSelf:"flex-start",
-    padding: 20, 
+    padding: 20,
     fontSize: 16
   },
   contentTop:{
