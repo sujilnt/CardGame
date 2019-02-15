@@ -1,7 +1,7 @@
 node_modules/**/*
 .expo/*
 npm-debug.*
-snap*
+snack/**/*
 *.jks
 *.p12
 *.key
