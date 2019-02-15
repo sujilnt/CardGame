@@ -5,13 +5,13 @@ import { purple, white } from '../../utils/colors';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import DeckContainer from "../DecksTabs/DecksContainer";  // Renders the Decks and list of cards .
 import NewDeckTabContainer from "../NewDeckTab/NewDeckTabContain"; // Renders the New Deck tab.
-import DeckViewContainer from "../DeckView/DeckViewContainer"; // Viewing of the deck 
-import AddCardQuestionsContainer from "../AddCardQuestions/AddCardQuestionsContainer"; // Adding answer and Questions 
-import QuizContainer from "../Quiz/QuizContainer"; // Quiz 
+import DeckViewContainer from "../DeckView/DeckViewContainer"; // Viewing of the deck
+import AddCardQuestionsContainer from "../AddCardQuestions/AddCardQuestionsContainer"; // Adding answer and Questions
+import QuizContainer from "../Quiz/QuizContainer"; // Quiz
 
 const MyStatusBar =  ({ backgroundColor, ...props })=> {
 	return (
-		<View style={{ backgroundColor, height: 20 }}>
+		<View style={{ backgroundColor, height: 40 }}>
 			<StatusBar translucent backgroundColor={backgroundColor} {...props}/>
 		</View>
 	)
@@ -52,7 +52,10 @@ const MainNavigator = StackNavigator({
 	DeckView: {
 		screen: DeckViewContainer,
 		navigationOptions: {
-			title: 'Deck Info',
+			headerTitleStyle:{
+				justifyContent: "center"
+			},
+			title: 'Deck Information',
 			headerTintColor: purple,
 			headerStyle: {
 				backgroundColor: "lightblue",
@@ -93,8 +96,8 @@ class MainApp extends React.PureComponent{
 			);
 		} else{
 			return (
-			 <View style={[styles.flex1,styles.container]}>	
-            <Text> 
+			 <View style={[styles.flex1,styles.container]}>
+            <Text>
                App loading.....
             </Text>
        </View>
@@ -105,12 +108,12 @@ class MainApp extends React.PureComponent{
 
 const styles = StyleSheet.create({
   flex1:{
-    flex:1
+    flex:1,
   },
   container:{
     justifyContent:"center",
     alignItems:"center"
   }
-})
+});
 
 export default MainApp;

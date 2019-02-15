@@ -4000,6 +4000,10 @@ react-native-material-cards@^1.0.9:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-really-awesome-button@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-really-awesome-button/-/react-native-really-awesome-button-1.0.1.tgz#6ac348a718eaf4926e55223786238da804b4343e"
+
 react-native-reanimated@1.0.0-alpha.11:
   version "1.0.0-alpha.11"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.11.tgz#b78c839bae878d149561b56a3c750414957ea86d"

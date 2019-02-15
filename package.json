@@ -20,6 +20,7 @@
     "react": "^16.8.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-material-cards": "^1.0.9",
+    "react-native-really-awesome-button": "^1.0.1",
     "react-native-vector-icons": "^6.2.0",
     "react-navigation": "1.5.11",
     "react-redux": "^6.0.0",

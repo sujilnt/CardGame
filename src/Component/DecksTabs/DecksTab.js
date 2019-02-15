@@ -25,10 +25,13 @@ class DecksTab extends React.PureComponent{
 		if(Object.keys(deck).length){
       return(
         <View style={{flex:1,flexGrow: 1}}>
-         <ScrollView contentContainerStyle={styles.contentContainer}>
+         <ScrollView
+	         contentContainerStyle={styles.contentContainer}
+	         
+         >
         {renderCard(deck,this.props)}
 			    </ScrollView>
-        </View>  
+        </View>
 		);
     } else {
         return(

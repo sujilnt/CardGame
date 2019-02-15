@@ -5,7 +5,7 @@ import {
   CardAction,
   CardButton,
 } from 'react-native-material-cards';
-import { View, Text,TouchableOpacity,Button } from 'react-native';
+import { View, Text } from 'react-native';
 import DeckView from '../DeckView/DeckView';
 
 class DeckCard extends PureComponent {

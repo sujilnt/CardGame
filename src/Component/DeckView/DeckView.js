@@ -1,6 +1,6 @@
 import React from "react";
 import {Text,View,StyleSheet,Button} from "react-native";
-
+import AwesomeButtonRick  from "react-native-really-awesome-button";
 
 
 class DeckView extends React.PureComponent{
@@ -9,13 +9,12 @@ class DeckView extends React.PureComponent{
       headerLeft: (
         <Button
           onPress={navigation.getParam('moveToHome')}
-          title="< back"
-          style={{color: "blue"}}
+          title="⬅"
+          color="lightblue"
         />
       ),
     };
   };
-
   onClick = async () =>{
       const checker = this.props.navigation.state.params.entryId ;
       const {action,state}=this.props;
@@ -45,7 +44,7 @@ componentDidMount() {
         entryId: {check}
     });
      await action.dispatch(action.getCurrentDeckAction(state.deck,check.title));
-  }
+  };
    render(){
 
    const check = this.props.navigation.state.params.entryId ;
@@ -55,25 +54,24 @@ componentDidMount() {
       return (
       <View style={styles.container}>
           <View style={styles.margin}>
-          <Text style={styles.title}>{check.title} </Text>
-          <Text style={styles.cardText}>{cardText}</Text>
+            <Text style={styles.title}>{check.title} </Text>
+            <Text style={styles.cardText}>{cardText}</Text>
           </View>
-          <View>
-          <Button
-              onPress={this.onClick}
-            style={styles.border}
-            title="Add Card"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-        />
-        <Button
+          <AwesomeButtonRick
             onPress={this._startQuiz}
+            type="primary"
             style={styles.border}
-            title="START QUIZ"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-        />
-        </View>
+            width= {200}
+          >
+             <Text>START QUIZ</Text>
+          </AwesomeButtonRick >
+          <AwesomeButtonRick
+              onPress={this._startQuiz}
+              type="primary"
+              style={styles.border}
+              width= {200} >
+              <Text>ADD CARD</Text>
+          </AwesomeButtonRick >
       </View>
     );
   } else {
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
       marginBottom: 10
   },
   title:{
-      fontSize: 24,
+      fontSize: 28,
       textDecorationLine:"underline",
       fontWeight:"bold",
       textAlign: "center"
@@ -109,7 +107,8 @@ const styles = StyleSheet.create({
    textAlign: "center"
   },
   border:{
-    borderWidth:1
+    marginBottom: 20,
+    marginTop: 20,
   }
 
 });
