@@ -1,8 +1,8 @@
 {
-  "name": "github.com/sujilnt/cardgame",
+  "name": "cardgame",
   "version": "0.0.0",
-  "description": "sujilnt/CardGame @ Feb 8, 2019",
-  "author": null,
+  "description": "A App to ask to ask Questions..",
+  "author": "Sujil anto thomas",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
