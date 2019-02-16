@@ -1,20 +1,22 @@
 import React from "react";
-import { Text, View,ScrollView ,StyleSheet,FlatList} from 'react-native';
+import { Text, View,ScrollView ,StyleSheet,Dimensions} from 'react-native';
 import DeckCard from "./DeckCard";
-
+const { height } = Dimensions.get('window');
 const renderCard = (data,props)=>{
 		const listofDecks = Object.values(data);
 		const renderListOFDeck = [];
 		listofDecks.forEach((data,index)=>{
           renderListOFDeck.push(
-            <DeckCard
-					    title={data.title}
-					    questions={data.questions}
-              parentProps = {props}
-              key={index}
-				    />
+          	<View style={{flex:1,height:200}}>
+	            <DeckCard
+					title={data.title}
+					questions={data.questions}
+                    parentProps = {props}
+					key={index}
+	            />
+          	</View>
 			  );
-		  })
+		  });
 		return renderListOFDeck;
 	};
 class DecksTab extends React.PureComponent{
@@ -24,13 +26,12 @@ class DecksTab extends React.PureComponent{
     const {deck} =this.props;
 		if(Object.keys(deck).length){
       return(
-        <View style={{flex:1,flexGrow: 1}}>
-         <ScrollView
-	         contentContainerStyle={styles.contentContainer}
-	         
-         >
-        {renderCard(deck,this.props)}
-			    </ScrollView>
+        <View style={{flex:1}}>
+	        <View style={{height: height-35,backgroundColor: "gray",paddingBottom:40, paddingTop: 10}}>
+		        <ScrollView>
+			        {renderCard(deck,this.props)}
+		        </ScrollView>
+	        </View>
         </View>
 		);
     } else {
@@ -43,13 +44,6 @@ class DecksTab extends React.PureComponent{
 	}
 }
 const styles = StyleSheet.create({
-	contentContainer: {
-		paddingVertical: 20,
-    flex:2,
-    flexWrap: "wrap",
-    flexDirection:"column",
-    height:"100%"
-	},
   loadercontainer:{
     flex:1,
     justifyContent:"center",
