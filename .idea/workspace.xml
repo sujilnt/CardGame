@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00b20268-0708-4577-b96c-5e03d818ae7a" name="Default Changelist" comment="feaut : Work of android and IOS Work good.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors.">
-      <change afterPath="$PROJECT_DIR$/src/Component/CustomBackButton/CustomBackButton.js" afterDir="false" />
+    <list default="true" id="00b20268-0708-4577-b96c-5e03d818ae7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/CustomBackButton/CustomBackButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/CustomBackButton/CustomBackButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/DeckView/DeckView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/DeckView/DeckView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/DecksTabs/DeckCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/DecksTabs/DeckCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/DecksTabs/DecksTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/DecksTabs/DecksTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/MainApp/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/MainApp/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Component/DeckView/DeckView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1014">
-              <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="369">
+              <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -67,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Component/CustomBackButton/CustomBackButton.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="260">
+              <caret line="10" column="38" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="10" selection-end-column="38" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -309,7 +304,7 @@
       <workItem from="1549625819439" duration="29625000" />
       <workItem from="1549824200379" duration="1421000" />
       <workItem from="1549903028796" duration="1398000" />
-      <workItem from="1550110886103" duration="25569000" />
+      <workItem from="1550110886103" duration="26642000" />
     </task>
     <task id="LOCAL-00001" summary="feaut : Adding a store to the project .&#10;1) Adding Redux to the store ,&#10;2) wrote test cases for actionCreators to make sure the functionalities are same . &#10;3)store has 2 states 1) deck and 2)current Deck &#10;4)Action Creators created : &#10;    1) getCurrentDeck, addQuestions,getDeck,addDeck&#10;    &#10;5) Written comments and for Better Readability .">
       <created>1549545461348</created>
@@ -360,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550251880121</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feaut : Work of android and IOS Work good.&#10;1)Improving the styles ofthe APP.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors.">
+      <created>1550274361042</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1550274361043</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106736000" />
+    <option name="totallyTimeSpent" value="107809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,7 +379,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21812434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -436,7 +437,8 @@
     <MESSAGE value="feaut : Adding a store to the project .&#10;1) Working of the app .&#10;2) need to integrate redux-persist ." />
     <MESSAGE value="feaut : Work of android and IOS Work good.&#10;1) Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions ." />
     <MESSAGE value="feaut : Work of android and IOS Work good.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="feaut : Work of android and IOS Work good.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors." />
+    <MESSAGE value="feaut : Work of android and IOS Work good.&#10;1)Improving the styles ofthe APP.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="feaut : Work of android and IOS Work good.&#10;1)Improving the styles ofthe APP.&#10;1) need to be fixed Bugs : - &#10;    1) onScrollview change based content change . &#10;    2) test for notification &#10;    3)remove warning async actions .&#10;    &#10;2)FiXed Bugs : - &#10; Lint erros and unassingned errors." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/react-native-paper/typings/components/BottomNavigation.d.ts" />
@@ -624,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Component/MainApp/MainApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/icons/loading-icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -657,10 +649,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Component/MainApp/MainApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Component/CustomBackButton/CustomBackButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="260">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="10" selection-end-column="38" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -669,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Component/DeckView/DeckView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        <state relative-caret-position="369">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

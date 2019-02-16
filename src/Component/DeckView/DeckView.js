@@ -1,16 +1,17 @@
 import React from "react";
 import {Text,View,StyleSheet,Button} from "react-native";
 import AwesomeButtonRick  from "react-native-really-awesome-button";
-
+import CustomBackButton from "../CustomBackButton/CustomBackButton";
 
 class DeckView extends React.PureComponent{
  static navigationOptions = ({ navigation }) => {
     return {
       headerLeft: (
-        <Button
-          onPress={navigation.getParam('moveToHome')}
-          title="⬅"
-          color="lightblue"
+        <CustomBackButton
+            onPress={navigation.getParam('moveToHome')}
+            backgroundColor={"lightblue"}
+            color={"black"}
+            size={24}
         />
       ),
     };
@@ -95,16 +96,16 @@ const styles = StyleSheet.create({
       marginBottom: 10
   },
   title:{
-      fontSize: 28,
-      textDecorationLine:"underline",
+      fontSize: 30,
       fontWeight:"bold",
-      textAlign: "center"
+      textAlign: "center",
   },
   cardText:{
-   fontSize: 18,
+   fontSize: 20,
    fontWeight:"300",
    color: "grey",
-   textAlign: "center"
+   textAlign: "center",
+   alignSelf: "center"
   },
   border:{
     marginBottom: 20,
