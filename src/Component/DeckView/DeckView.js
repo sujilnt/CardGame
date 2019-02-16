@@ -1,5 +1,5 @@
 import React from "react";
-import {Text,View,StyleSheet,Button} from "react-native";
+import {Text,View,StyleSheet} from "react-native";
 import AwesomeButtonRick  from "react-native-really-awesome-button";
 import CustomBackButton from "../CustomBackButton/CustomBackButton";
 
@@ -67,7 +67,7 @@ componentDidMount() {
              <Text>START QUIZ</Text>
           </AwesomeButtonRick >
           <AwesomeButtonRick
-              onPress={this._startQuiz}
+              onPress={this.onClick}
               type="primary"
               style={styles.border}
               width= {200} >

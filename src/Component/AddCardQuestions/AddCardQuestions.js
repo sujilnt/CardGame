@@ -4,8 +4,10 @@ import { StyleSheet,
 	     View,
 	     TextInput,
 	     KeyboardAvoidingView,
-       Button } from 'react-native';
-
+        } from 'react-native';
+import {purple,lightPurp,white} from "../../utils/colors";
+import CustomBackButton  from "react-native-really-awesome-button";
+import AwesomeButtonRick from "../DeckView/DeckView";
 class AddCardQuestions extends React.PureComponent{
   state={
       question: "",
@@ -46,7 +48,6 @@ class AddCardQuestions extends React.PureComponent{
       return (
        <KeyboardAvoidingView behavior='padding'  style={styles.container}>
 			<View style={styles.container}>
-				<Text >What is the question?</Text>
 			      <Text style={styles.title}>What is the question?</Text>
 			       <TextInput
 			        style={styles.input}
@@ -60,7 +61,17 @@ class AddCardQuestions extends React.PureComponent{
 			        onChangeText={this.handleChangeAnswers}
 			        value={this.state.answer}
 			      />
-   				 <Button title="Submit" onPress={this.SubmitAction}/>
+   				 <CustomBackButton
+				     onPress={this.SubmitAction}
+				     width= {200}
+				     backgroundColor={purple}
+				     backgroundActive={lightPurp}
+				     backgroundDarker={lightPurp}
+				     springRelease={true}
+				     disabled={false}
+			     >
+				     <Text style={{color:white}}>Submit</Text>
+			     </CustomBackButton>
 			</View>
 		</KeyboardAvoidingView>
       );
@@ -73,14 +84,15 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
   title: {
-		fontSize: 20,
+		fontSize: 24,
 		color: '#333',
+	    fontWeight: "bold"
 	},
     input: {
-		  width: 250,
-		  height: 40,
-		  padding: 8,
-		  borderWidth: 1,
+		  width: 350,
+		  height: 50,
+		  padding: 10,
+		  borderWidth: 3,
 		  borderColor: '#757575',
 		  margin: 20
 	},

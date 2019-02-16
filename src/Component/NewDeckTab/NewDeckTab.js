@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, 
+import { StyleSheet,
 	     Text,
 	     View,
-	     TouchableOpacity,
 	     TextInput,
-	     KeyboardAvoidingView,
        Button } from 'react-native';
+import {lightPurp, purple, white} from "../../utils/colors";
+import CustomBackButton  from "react-native-really-awesome-button";
 class NewDeckTab extends React.Component{
   state={
     nameofDeck:""
@@ -38,10 +38,17 @@ class NewDeckTab extends React.Component{
         		 onChangeText={this.handleChangeQuestions}
                  value={this.state.nameofDeck}
              />
-        	<Button 
-            title="submit" 
-            onPress={this.submitDeck} 
-          />
+             <CustomBackButton
+	             onPress={this.submitDeck}
+	             width= {200}
+	             backgroundColor={purple}
+	             backgroundActive={lightPurp}
+	             backgroundDarker={lightPurp}
+	             springRelease={true}
+	             disabled={false}
+				 >
+					 <Text style={{color:white}}>Add New Deck</Text>
+             </CustomBackButton>
       </View>
 		);
 	}
