@@ -1,6 +1,8 @@
 import React from "react";
 import {View,Text,Button,TouchableOpacity,StyleSheet} from "react-native";
+import {red, purple,green,white,gray} from "../../utils/colors";
 import { clearLocalNotification,setLocalNotification,submitEntry} from "../../utils/helper";
+import CustomBackButton  from "react-native-really-awesome-button";
 export function Info({ onPress, style, text }){
 	return (
 		<TouchableOpacity onPress={onPress}>
@@ -78,8 +80,8 @@ class Quiz extends React.PureComponent{
              const currentQuestion = currentQuestionsArray[questionNumber];
             return(
             <View style={[styles.container,styles.contentTop]}>
-               <Text style={styles.numberOfQuestions}>{numberofQuestionAnswered} / {totalQuestions} </Text>
-               <Text style={styles.currentQuestionStyles}> {currentQuestion.question} </Text>
+               <Text style={[styles.numberOfQuestions,styles.bolding]}>{numberofQuestionAnswered} / {totalQuestions} </Text>
+               <Text style={[styles.currentQuestionStyles,styles.bolding]}> {currentQuestion.question} </Text>
               {
                  this.state.showAnswer ?
                    <Text style={styles.answer}>
@@ -89,45 +91,64 @@ class Quiz extends React.PureComponent{
 
                {
                  !this.state.showAnswer ?
-                 <Info text={"Show Answer"} style={{ color: "blue",fontSize: 16,margin: 20 }} onPress={this.showAnswer}/>
+                 <Info text={"Show Answer"} style={{ fontSize: 16,margin: 20,color:"blue" }} onPress={this.showAnswer}/>
 				        	    : <Info text={"Hide Answer"} style={{ color: "blue",fontSize: 16,margin: 20 }}  onPress={this.showAnswer}/>
                       }
-              <Button
-                onPress={this.onChange}
-                style={styles.border}
-                title="Correct"
-                color="green"
-                accessibilityLabel="Correct Answer BUTTON"
-              />
-              <Button
-                onPress={this.wrongButtononChange}
-                style={styles.border}
-                title="Wrong"
-                color="red"
-                accessibilityLabel=" WRONG ANSWER BUTTON"
-               />
+                <Text> </Text>
+                <CustomBackButton
+                    onPress={this.onChange}
+                    width= {200}
+                    backgroundColor={"#1b5e20"}
+                    backgroundActive={green}
+                    backgroundDarker={green}
+                    springRelease={true}
+                    disabled={false}
+                >
+                    <Text style={{color:white}}>CORRECT</Text>
+                </CustomBackButton>
+                <Text> </Text>
+                <CustomBackButton
+                    onPress={this.wrongButtononChange}
+                    width= {200}
+                    backgroundColor={"#e53935"}
+                    backgroundActive={red}
+                    backgroundDarker={red}
+                    springRelease={true}
+                    disabled={false}
+                >
+                    <Text style={{color:white}}>WRONG </Text>
+                </CustomBackButton>
             </View>
        )
           } else{
             const perecentage = correctanswered / totalQuestions*100;
                 return (
                   <View style={styles.container}>
-                    <Text style={[styles.text1,styles.fontWeightAndColor]}>{"Your Score Perencetage is"}</Text>
-                    <Text style={[styles.text2,styles.fontWeightAndColor]}>{perecentage}%</Text>
-                    <Button
-                      onPress={this.resetReults}
-                      style={styles.border}
-                      title="Redo Quiz"
-                      color="purple"
-                      accessibilityLabel="resetting results "
-                    />
-                    <Button
-                      onPress={this.backtoDeck}
-                      style={styles.border}
-                      title="Go back to Deck"
-                      color="red"
-                      accessibilityLabel="back to deck button"
-                    />
+                    <Text style={[styles.text1,styles.fontWeightAndColor,styles.bolding]}>{"Your Score Perencetage is"}</Text>
+                    <Text style={[styles.text2,styles.fontWeightAndColor,styles.bolding]}>{perecentage}%</Text>
+                      <CustomBackButton
+                          onPress={this.resetReults}
+                          width= {200}
+                          backgroundColor={purple}
+                          backgroundActive={"#aa00ff"}
+                          backgroundDarker={"#aa00ff"}
+                          springRelease={true}
+                          disabled={false}
+                      >
+                          <Text style={{color:white}}>Redo QUIZ</Text>
+                      </CustomBackButton>
+                      <Text> </Text>
+                      <CustomBackButton
+                          onPress={this.backtoDeck}
+                          width= {200}
+                          backgroundColor={red}
+                          backgroundActive={"#f44336"}
+                          backgroundDarker={"#f44336"}
+                          springRelease={true}
+                          disabled={false}
+                      >
+                          <Text style={{color:white}}>Back To Deck</Text>
+                      </CustomBackButton>
                   </View>
                 )
           }
@@ -158,13 +179,12 @@ const styles = StyleSheet.create({
   },
   text1:{
     fontSize:28,
-    padding:10
   },
   text2:{
     fontSize:34,
+    marginBottom: 10
   },
   fontWeightAndColor:{
-     fontWeight:"bold",
      color: "green"
   },
   border:{
@@ -186,8 +206,13 @@ const styles = StyleSheet.create({
   },
   answer:{
    padding:20,
-   fontSize: 18
-  }
+   fontSize: 18,
+   fontWeight:"100",
+   color:gray
+  },
+   bolding:{
+       fontWeight:"bold"
+   }
 
 });
 export default Quiz;

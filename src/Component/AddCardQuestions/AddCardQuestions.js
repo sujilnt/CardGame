@@ -7,7 +7,6 @@ import { StyleSheet,
         } from 'react-native';
 import {purple,lightPurp,white} from "../../utils/colors";
 import CustomBackButton  from "react-native-really-awesome-button";
-import AwesomeButtonRick from "../DeckView/DeckView";
 class AddCardQuestions extends React.PureComponent{
   state={
       question: "",
