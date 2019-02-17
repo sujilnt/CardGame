@@ -27,7 +27,7 @@ class DecksTab extends React.PureComponent{
 		if(Object.keys(deck).length){
       return(
         <View style={{flex:1}}>
-	        <View style={{height: height-35,backgroundColor: "gray",paddingBottom:40, paddingTop: 10}}>
+	        <View style={{height: height-35,paddingBottom:40, paddingTop: 10}}>
 		        <ScrollView>
 			        {renderCard(deck,this.props)}
 		        </ScrollView>
