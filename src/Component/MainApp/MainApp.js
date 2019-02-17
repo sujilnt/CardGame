@@ -2,7 +2,7 @@ import React from "react";
 import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { purple, white } from '../../utils/colors';
-import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
 import DeckContainer from "../DecksTabs/DecksContainer";  // Renders the Decks and list of cards .
 import NewDeckTabContainer from "../NewDeckTab/NewDeckTabContain"; // Renders the New Deck tab.
 import DeckViewContainer from "../DeckView/DeckViewContainer"; // Viewing of the deck

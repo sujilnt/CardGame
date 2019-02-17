@@ -3,7 +3,7 @@ import { StyleSheet,
 	     Text,
 	     View,
 	     TextInput,
-       Button } from 'react-native';
+        } from 'react-native';
 import {lightPurp, purple, white} from "../../utils/colors";
 import CustomBackButton  from "react-native-really-awesome-button";
 class NewDeckTab extends React.Component{
@@ -12,13 +12,13 @@ class NewDeckTab extends React.Component{
   };
   submitDeck= async()=>{
     const {dispatch,addDeckAction}=this.props.action;
-    const {nameofDeck}=this.state
+    const {nameofDeck}=this.state;
     const newDeckObj= {
       title: nameofDeck.trim(),
       questions:[]
     };
     console.log(this.props, "NewDeck");
-    this.relocate(this.props,{})
+    this.relocate(this.props,{});
     await dispatch(addDeckAction(this.props.state.deck,newDeckObj))
   };
   relocate = async (props,check) =>{
@@ -26,7 +26,7 @@ class NewDeckTab extends React.Component{
       {
         entryId: check
       });
-  }
+  };
 
   handleChangeQuestions= (nameofDeck) => this.setState({ nameofDeck });
 	render(){
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		color: '#333',
 	}
-})
+});
 
 export default NewDeckTab;
