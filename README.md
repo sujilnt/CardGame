@@ -11,6 +11,8 @@ Once installed use npm start or yarn start to launch the project.
 
 This project was made for Android. You can preview the app using Expo or an Android simulator.
 
+## `Demo Execution of the app`
+![alt text](./screenshot/cardAndroid.gif)
 Devices
 This app is tested with IOS.
 
