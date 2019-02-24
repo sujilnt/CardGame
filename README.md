@@ -13,12 +13,14 @@ This project was made for Android. You can preview the app using Expo or an Andr
 
 ## `Demo Execution of the app`
 ![alt text](./screenshots/cardAndroid.gif)
-Devices
+ 
+## `Devices`
 This app is tested with IOS.
 
 Built With
 React Native
-
 Redux
-
 Expo
+
+## `Snack url link of the app` 
+- https://snack.expo.io/@sujilnt/github.com-sujilnt-cardgame
