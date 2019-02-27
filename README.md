@@ -15,7 +15,7 @@ This project was made for Android. You can preview the app using Expo or an Andr
 ![alt text](./screenshots/cardAndroid.gif)
  
 ## `Devices`
-This app is tested with IOS.
+This app is works well Android and IOS.
 
 Built With
 React Native
