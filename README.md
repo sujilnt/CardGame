@@ -4,6 +4,10 @@ Mobile Android application, built with React Native, that allows users to study 
 
 This project encompasses the fundamental aspects of building a native application including handling infinite lists, routing, and user input.
 
+
+## `Demo Execution of the app`
+![alt text](./screenshots/cardAndroid.gif)
+
 Getting Started
 After downloading the repository please run npm install or yarn install from inside the repository directory.
 
@@ -11,8 +15,6 @@ Once installed use npm start or yarn start to launch the project.
 
 This project was made for Android. You can preview the app using Expo or an Android simulator.
 
-## `Demo Execution of the app`
-![alt text](./screenshots/cardAndroid.gif)
  
 ## `Devices`
 This app is works well `Android and IOS` devices.
