@@ -8,7 +8,7 @@ This project encompasses the fundamental aspects of building a native applicatio
 ## `Demo Execution of the app`
 ![alt text](./screenshots/cardAndroid.gif)
 
-Getting Started
+### Getting Started
 After downloading the repository please run npm install or yarn install from inside the repository directory.
 
 Once installed use npm start or yarn start to launch the project.
