@@ -22,6 +22,7 @@ This app is works well `Android and IOS` devices.
 Built With
 React Native
 Redux
+Css FLexbox
 Expo
 
 ## `Snack url link of the app` 
