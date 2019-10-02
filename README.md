@@ -22,6 +22,7 @@ This app is works well `Android and IOS` devices.
 Built With
 React Native
 Redux
+Redux-thunk
 Css FLexbox
 Expo
 
